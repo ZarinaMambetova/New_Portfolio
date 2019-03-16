@@ -12,9 +12,9 @@ html(lang="en")
       .maincontent
         .welcome-section
             section.hero
-              .conteiner.hero__container
+              .container.hero__container
                 header.header
-                  .logo
+                  .logo ZM
                   .header__menu
                     nav.nav
                       ul.nav__list
@@ -35,3 +35,38 @@ html(lang="en")
                     .user-info__name Зарина Мамбетова
                 .hero__bottom-buttons
                   .scroll-down-button Скролл
+            section.about
+              .container
+                .about__left
+                  .user
+                    .user__avatar
+                      img(src="./images/content/user.jpg").user__avatar-pic
+                    .user__data
+                      table.user__data-table
+                        - 
+                          var data = [
+                                      ['Проживаю', 'Астрахань'],
+                                      ['Возраст', '34 года'],
+                                      ['Родилась', '19 декабря 1984'],
+                          ]
+                        each row in data
+                          tr.user__data-row
+                            td.user__data-title #{row[0]}
+                            td.user__data-content #{row[1]}
+                .about__right
+                  .about__welcome Привет, меня зовут
+                  .about__username Зарина Мамбетова
+                  .about__desc
+                    p Я занимаюсь разработкой современных сайтов и приложений.
+                    p Мне нравится делать интересные и современные проекты.
+                  .about__ps
+                    p Этот сайт я сделала в рамках обучения в Школе онлайн-образования Loftschool.
+        .triangles
+          svg.triangles__item.triangles__item--left(viewBox="0 0 1000 100")
+            polygon(
+              points="0,0 0,100 1000,100"
+            )
+          svg.triangles__item.triangles__item--right(viewBox="0 0 1000 100")
+            polygon(
+              points="0,100 1000,100 1000,0"
+            )
