@@ -10,6 +10,28 @@ html(lang="en")
   body
     .wrapper
       .maincontent
-        +image('content/user.jpg', 'user-pic')
-        +icon('link', 'link-class')
-        .icon-bg
+        .welcome-section
+            section.hero
+              .conteiner.hero__container
+                header.header
+                  .logo
+                  .header__menu
+                    nav.nav
+                      ul.nav__list
+                        - var menu = ['Главная', 'Обо мне', 'Навыки', 'Работы', 'Отзывы', 'Связаться'];
+                        each item in menu
+                          li.nav__item
+                            a(href="").nav__link #{item}
+                  .header__links
+                    ul.socials
+                      - var socials = ['insta', 'vk', 'github'];
+                      each item in socials
+                        li.socials__item
+                          a(href="").socials__link 
+                            +icon(`${item}`, 'social__icon')
+                .hero__content
+                  .user-info
+                    .user-info__desc Личный сайт веб-разработчика
+                    .user-info__name Зарина Мамбетова
+                .hero__bottom-buttons
+                  .scroll-down-button Скролл
