@@ -70,3 +70,54 @@ html(lang="en")
             polygon(
               points="0,100 1000,100 1000,0"
             )
+        section.values
+          .container
+            .values__title
+              h2.section-title.values__title--text.section__title-small Чем я могу быть вам полезен
+              .values__desc
+                p Этот сайт я сделал в рамках обучения в Школе онлайн образования LoftSchool. Чуть позже я освежу в нём свой контент. А пока посмотрите, как тут всё классно и красиво!
+            ul.user-skills
+              -
+                var skills = [
+                  ['Frontend',['HTML5', 'CSS3', 'javascript', 'jquery и vue']],
+                  ['Workflow',['GIT', 'Terminal', 'Gulp', 'Webpacl']],
+                ]
+              each item in skills
+                li.user-skills__item
+                  .skills-row
+                    h3.skills-row__title  #{item[0]}
+                    ul.skills-row__list
+                      each skill in item[1]
+                        li.skills-row__item
+                          .skill
+                            svg(viewBox="0 0 200 200" preserveAspectRatio="none").skill__shape
+                              circle(
+                                r="100" cx="100" cy="100"
+                              ).skill__circle.skill__circle--under
+                              circle().skill__circle.skill__circle--above
+                              linear-gradient()
+                            .skill__title #{skill}
+        section.slider
+        .bottom-section
+          section.rewiews
+            .rewiews__title
+              h2.section__title Что обо мне говорят 
+              .rewiews__slider-controls
+            ul.rewiews__slider
+              - for (var i = 0; i < 2; i++)
+                li.rewiews__slider-item
+                  .quote
+                    .quote__text
+                    .quote__autor
+                      .user.user--horizontal
+                        .user__avatar
+                          img(src="./images/content/user.jpg").user__avatar-pic
+                        .user__data
+                          .user__name Ковальчук Дмитрий
+                          .user__occ Основатель LoftSchool
+
+
+
+          section.form
+
+
